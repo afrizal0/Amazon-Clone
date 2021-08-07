@@ -18,7 +18,9 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
 	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
-
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+	<script src="./firebase.js"></script>
+	<script src="./script.js"></script>
 </head>
 <body>
 	<div class="bg-white w-full">
@@ -119,7 +121,7 @@
 					</h1>
 					<div class="categories mt-5 flex">
 						<div class="icon-desktop h-20 w-20 bg-white rounded-xl flex items-center justify-center">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-12 rtw-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
  								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 							</svg>
 						</div>
@@ -164,76 +166,7 @@
 				</div>
 				<div class="main-section-deals">
 					<h1 class="popular-categories font-bold text-gray-700 text-2xl my-5">Hot Deals 🔥</h1>
-					<div class="main-section-products flex">
-						<div class="main-product mr-6">
-							<div class="product-image w-48 h-52 bg-white rounded-lg">
-								<img class="w-full h-full object-contain" src="https://cf.shopee.co.id/file/6211d09f430ac35edd54897cc3e333b1" alt="">
-							</div>
-							<div class="product-name text-gray-700 font-bold mt-2 text-sm">
-								Playstation 5(2021)
-							</div>
-							<div class="product-make text-green-700 font-bold">
-								Sony
-							</div>
-							<div class="product-rating text-yellow-300 font-bold my-1">
-								⭐⭐⭐⭐⭐ 4.5
-							</div>
-							<div class="product-price font-bold text-gray-700 text-lg">
-								$2.900.00
-							</div>
-						</div>
-						<div class="main-product mr-6">
-							<div class="product-image w-48 h-52 bg-white rounded-lg">
-								<img class="w-full h-full object-contain " src="https://www.backscatter.com/ITEM_IMAGES/cn-8469b002_1.jpg?resizeid=6&resizeh=600&resizew=600" alt="">
-							</div>
-							<div class="product-name text-gray-700 font-bold mt-2 text-sm">
-								Canon EOS 70D DSLR Camera
-							</div>
-							<div class="product-make text-green-700 font-bold">
-								Canon
-							</div>
-							<div class="product-rating text-yellow-300 font-bold my-1">
-								⭐⭐⭐⭐⭐ 4.5
-							</div>
-							<div class="product-price font-bold text-gray-700 text-lg">
-								$1,199.00
-							</div>
-						</div>
-						<div class="main-product mr-6">
-							<div class="product-image w-48 h-52 bg-white rounded-lg">
-								<img class="w-full h-full object-contain" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//101/MTA-2670589/apple_apple-macbook-pro-2018-mr962id-a-notebook-with-touch-bar---silver--15-inch-_full02.jpg" alt="">
-							</div>
-							<div class="product-name text-gray-700 font-bold mt-2 text-sm">
-								Apple Macbook Pro(2018)
-							</div>
-							<div class="product-make text-green-700 font-bold">
-								Apple
-							</div>
-							<div class="product-rating text-yellow-300 font-bold my-1">
-								⭐⭐⭐⭐⭐ 4.3
-							</div>
-							<div class="product-price font-bold text-gray-700 text-lg">
-								$2,999.00
-							</div>
-						</div>
-						<div class="main-product mr-6">
-							<div class="product-image w-48 h-52 bg-white rounded-lg">
-								<img class="w-full h-full object-contain" src="https://media.dinomarket.com/docs/imgTD/2019-08/Pic_JBL650BTNC_bl_280819200819_ll.jpg.jpg" alt="">
-							</div>
-							<div class="product-name text-gray-700 font-bold mt-2 text-sm">
-								JBL Wireless Headphones
-							</div>
-							<div class="product-make text-green-700 font-bold">
-								JBL
-							</div>
-							<div class="product-rating text-yellow-300 font-bold my-1">
-								⭐⭐⭐⭐⭐ 4.8
-							</div>
-							<div class="product-price font-bold text-gray-700 text-lg">
-								$1,150.00
-							</div>
-						</div>
-					</div>
+					<div class="main-section-products flex"></div>
 				</div>
 			</div>
 		</div>

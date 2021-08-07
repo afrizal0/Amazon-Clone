@@ -21,3 +21,5 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   firebase.analytics();
+
+  var db = firebase.firestore();
