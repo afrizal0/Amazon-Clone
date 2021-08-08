@@ -72,7 +72,6 @@ function generateItems(items) {
     })
     
     document.querySelector('.main-section-products').innerHTML = doc;
-    console.log(items.image);
 }
 
 getItem();
