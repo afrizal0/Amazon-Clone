@@ -13,6 +13,7 @@
 	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 	<script src="./firebase.js"></script>
 	<script src="./header.js"></script>
 	<script src="./cart.js"></script>
@@ -21,7 +22,8 @@
 	<div class="bg-white w-full">
 		<div class="header h-16 bg-gray-900 flex items-center">
 			<div class="logo w-1/5 h-16 ml-10">
-				<img class="w-28 h-16 object-contain" src="https://www.pinclipart.com/picdir/big/57-576184_barber-clippers-clipart.png" alt=""> 
+
+				<a href="./index.html"><img class="w-28 h-16 object-contain" src="https://www.pinclipart.com/picdir/big/57-576184_barber-clippers-clipart.png" alt=""></a>
 			</div>
 			<input class="h-9 w-30 bg-gray-800 border border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 focus:outline-none placeholder-white" id="search" type="text" placeholder="Search..."></input>
 			<div class="categories h-9 w-30 bg-gray-800 border border-gray-500 border-opacity-75 px-3 text-white flex items-center">
@@ -53,7 +55,7 @@
 			</div>
 		</div>
 		<div class="main flex h-screen">
-			<div class="border-t-2 border-gray-700 main-sidebar w-1/5 bg-gray-900 p-6">
+			<div class="hidden md:block border-t-2 border-gray-700 main-sidebar w-1/5 bg-gray-900 p-6">
 				<div class="sidebar-categories ">
 					<div class="sidebar-main-category text-yellow-500 cursor-pointer flex font-bold mb-4 p-2 bg-gray-700 rounded-lg">
 						<span class="w-8">
@@ -105,13 +107,13 @@
 					<h2 class="w-48">Count</h2>
 					<h2 class="w-48">Total Cost</h2>
 				</div>
-				<div class="cart-items mt-5">
+				<div class="cart-items mt-5"></div>
 					<!-- Cart Items from DB -->
 				<div class="complete-order flex justify-end mt-10">
 					<div class="total-cost mr-7">
 						<h2 class="text-gray-400">Total Cost</h2>
 						<div class="total-cost-number font-bold text-gray-600 text-3xl">
-							$1,780.00
+							$
 						</div> 
 					</div>
 					<div class="complete-order-button w-56 flex items-center justify-center bg-yellow-500 cursor-pointer text-white rounded hover:bg-yellow-600">

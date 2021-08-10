@@ -8,23 +8,48 @@ function getCartItems(){
 			});
 		});
 		generateCartItems(cartItems);
+		totalCostNumber(cartItems);
 	});
 }
 
-
-function decreaseCount(itemId) {
+function increaseCount(itemId){
 	let cartItem = db.collection("cart-items").doc(itemId);
-	cartItem.get().then(function(doc){
-		if(doc.exists) {
-			if(doc.data().quantity > 1) {
+	cartItem.get().then(function(doc) {
+		if(doc.exists){
+			if(doc.data().quantity > 0) {
 				cartItem.update({
-					quantity: doc.data().quantity - 1;
+					quantity: doc.data().quantity + 1
 				})
 			}
 		}
 	})
-
 }
+
+function decreaseCount(itemId){
+	let cartItem = db.collection("cart-items").doc(itemId);
+	cartItem.get().then(function(doc) {
+		if(doc.exists){
+			if(doc.data().quantity > 1) {
+				cartItem.update({
+					quantity: doc.data().quantity - 1
+				})
+			}
+		}
+	})
+}
+
+function deleteItem(itemId) {
+	db.collection("cart-items").doc(itemId).delete();
+}
+
+function totalCostNumber(items){
+	let totalCost = 0;
+	items.forEach((item) => {
+		totalCost += item.price * item.quantity;
+	})
+	document.querySelector(".total-cost-number").innerText = numeral(totalCost).format('$0,0.00');
+}
+
 
 function generateCartItems(cartItems) {
 	let itemsHTML = "";
@@ -52,26 +77,41 @@ function generateCartItems(cartItems) {
 							</div>
 						</div>
 						<div class="cart-item-total-count w-48 font-bold text-gray-400">
-							$${item.price * item.quantity}
+							${numeral(item.price * item.quantity).format('$0,0.00')}
 						</div>
-						<div class="cart-item-delete w-10 font-bold text-gray-200 cursor-pointer hover:text-gray-400">
+						<div data-id="${item.id}" class="cart-item-delete w-10 font-bold text-gray-200 cursor-pointer hover:text-gray-400">
 							<i class="fas fa-times"></i>
 						</div>
 					</div>
-		`
-		
+
+		`;
+	
 	})
 	document.querySelector('.cart-items').innerHTML = itemsHTML;
 	createEventListeners();
+
 }
 
 function createEventListeners(){
-	let increseBtn = document.querySelectorAll('.card-item-increase');
+	let increaseBtn = document.querySelectorAll('.card-item-increase');
 	let decreaseBtn = document.querySelectorAll('.card-item-decrease');
+	let deleteBtn = document.querySelectorAll('.cart-item-delete');
+
+	increaseBtn.forEach((button) => {
+		button.addEventListener('click', function(){
+			increaseCount(button.dataset.id);
+		})
+	})
 
 	decreaseBtn.forEach((button) => {
 		button.addEventListener('click', function(){
 			decreaseCount(button.dataset.id);
+		})
+	})
+
+	deleteBtn.forEach((button) => {
+		button.addEventListener('click', function(){
+			deleteItem(button.dataset.id);
 		})
 	})
 }
